@@ -1,7 +1,7 @@
 // Event listener para las cajas de input
 const enterButton= document.getElementById("enterbutton");
 
-enterbutton.addEventListener('click', function(){
+enterButton.addEventListener('click', function(){
   let softLenght = document.getElementById("softbox").value;
   
 });
