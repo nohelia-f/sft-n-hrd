@@ -1,28 +1,19 @@
-// //function addNumbers(x, y){
-// return x + y
-// }
-
-// const totalAge = addNumbers(30, 31);
-
-// console.log(totalAge);
-var inchesToCmsConverstionFactor = 2.54
-const brianLenghtInches = 4.5;
-const brianLenghtInchesWhenHard = 6.75;
+const inchesToCmsConvertionFactor = 2.54
+let softLenghtInches = 4.5;
+let hardLenghtInches = 6.75;
 
 
  function convertInchestoCms(inch){
- return inch * inchesToCmsConverstionFactor
+ return inch * inchesToCmsConvertionFactor
  }
 
- function differenceBetweenSoftAndHard(lenghtSoft, lenghtHard){
-    return lenghtHard - lenghtSoft
+ function differenceBetweenSoftAndHard(hardLenght, softLenght){
+    return hardLenght - softLenght
  }
 
- const lenghtHard = 17.145
- const lenghtSoft = 11.43
- const brianLenghtCms = convertInchestoCms(brianLenghtInches);
- const brianLenghtCmsWhenHard = convertInchestoCms(brianLenghtInchesWhenHard);
+ let softLenghtCms = convertInchestoCms(softLenghtInches);
+ let hardLenghtCms = convertInchestoCms(hardLenghtInches);
 
 
-console.log(brianLenghtCms, brianLenghtCmsWhenHard);
-console.log(differenceBetweenSoftAndHard(lenghtSoft, lenghtHard));
+console.log(softLenghtCms, hardLenghtCms, 'cm');
+console.log(differenceBetweenSoftAndHard(hardLenghtCms, softLenghtCms), 'cm diff');
