@@ -1,12 +1,15 @@
 
 // Event listener para las cajas de input
 const enterButton= document.getElementById("enterbutton");
-console.log(enterButton);
 
 enterButton.addEventListener('click', function(){
-  let softLenght = document.getElementById("softbox").value; 
+  let softLenght = document.getElementById("softbox").value; //Getting info from softbox
+  let hardLenght = document.getElementById("hardbox").value; //Getting info from hardbox
+  console.log(softLenght, hardLenght);
+  document.getElementById("result").innerHTML = (hardLenght - softLenght); //Printing the difference on the screen
 });
 
+/*
 
 //Conversion de pulgadas a centimetros 
 const inchesToCmsConverstionFactor = 2.54
@@ -14,7 +17,7 @@ let softLenghtInches = 4.5;
 let hardLenghtInches = 6.75;
 
  function convertInchestoCms(inch){
- return inch * inchesToCmsConvertionFactor
+ return inch * inchesToCmsConverstionFactor
  }
 
  let softLenghtCms = convertInchestoCms(softLenghtInches);
@@ -26,3 +29,4 @@ let hardLenghtInches = 6.75;
  }
 
 console.log(differenceBetweenSoftAndHard(softLenght, hardLenght));
+*/
