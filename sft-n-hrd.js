@@ -15,12 +15,12 @@ enterButton.addEventListener('click', function(){
 
 //Botones para cambiar de pulgadas a centimetros
 
-const inchesButtonSoft = document.getElementById('inches-soft')
-const inchesButtonHard = document.getElementById('inches-hard')
-const cmsButtonSoft = document.getElementById('cms-soft')
-const cmsButtonHard = document.getElementById('cms-hard')
-const cmsButtonResult = document.getElementById('cms-result')
-const inchesButtonResult = document.getElementById('inches-result')
+const inchesButtonSoft = document.getElementById('inch-soft')
+const inchesButtonHard = document.getElementById('inch-hard')
+const cmsButtonSoft = document.getElementById('cm-soft')
+const cmsButtonHard = document.getElementById('cm-hard')
+const cmsButtonResult = document.getElementById('cm-result')
+const inchesButtonResult = document.getElementById('inch-result')
 
 function rerenderButtons(){
   console.log('////////////////////////////')
@@ -30,59 +30,62 @@ function rerenderButtons(){
   console.log(resultUnitButtonState);
   console.log('////////////////////////////')
   console.log('about to rerender all the buttons');
+
+
 //if statements for soft inches and cms
-  if (softUnitButtonState == 'inch'){
-    document.getElementById('inches-soft').style.backgroundColor = 'lavender';
-    document.getElementById('inches-soft').style.borderColor = "blueviolet";
+  if (softUnitButtonState == 'cm' || softUnitButtonState == null){
+    document.getElementById('inch-soft').style.backgroundColor = 'transparent';
+    document.getElementById('inch-soft').style.borderColor = 'transparent';
    } else {
-    document.getElementById('inches-soft').style.backgroundColor = 'transparent';
-    document.getElementById('inches-soft').style.borderColor = 'transparent';
-    console.log('soft inches should be off')
+    document.getElementById('inch-soft').style.backgroundColor = 'lavender';
+    document.getElementById('inch-soft').style.borderColor = "blueviolet";
+    console.log('soft inches should be on')
    }
 
-   if (softUnitButtonState == 'cm'){
-    document.getElementById('cms-soft').style.backgroundColor = 'lavender';
-    document.getElementById('cms-soft').style.borderColor = "blueviolet";
-   } else {
+   if (softUnitButtonState == 'inch' || softUnitButtonState == null){
     document.getElementById('cm-soft').style.backgroundColor = 'transparent';
     document.getElementById('cm-soft').style.borderColor = 'transparent';
+   } else {
+    document.getElementById('cm-soft').style.backgroundColor = 'lavender';
+    document.getElementById('cm-soft').style.borderColor = "blueviolet";
    }
   
   //if statements for hard inches and cms
-   if (hardUnitButtonState == 'inch'){
-    document.getElementById('inches-hard').style.backgroundColor = 'lavender';
-    document.getElementById('inches-hard').style.borderColor = "blueviolet";
+   if (hardUnitButtonState == 'cm' || hardUnitButtonState == null){
+    document.getElementById('inch-hard').style.backgroundColor = 'transparent';
+    document.getElementById('inch-hard').style.borderColor = "transparent";
    } else {
-    document.getElementById('inches-hard').style.backgroundColor = 'transparent';
-    document.getElementById('inches-hard').style.borderColor = 'transparent';
+    document.getElementById('inch-hard').style.backgroundColor = 'lavender';
+    document.getElementById('inch-hard').style.borderColor = 'blueviolet';
    }
 
-   if (hardUnitButtonState == 'cm'){
-    document.getElementById('cms-hard').style.backgroundColor = 'lavender';
-    document.getElementById('cms-hard').style.borderColor = "blueviolet";
-   } else {
+   if (hardUnitButtonState == 'inch' || hardUnitButtonState == null){
     document.getElementById('cm-hard').style.backgroundColor = 'transparent';
-    document.getElementById('cm-hard').style.borderColor = 'transparent';
+    document.getElementById('cm-hard').style.borderColor = "transparent";
+   } else {
+    document.getElementById('cm-hard').style.backgroundColor = 'lavender';
+    document.getElementById('cm-hard').style.borderColor = 'blueviolet';
    }
 
   //if statement for result button inches and cms
-   if (resultUnitButtonState == 'inch'){
-    document.getElementById('inches-result').style.backgroundColor = 'lavender';
-    document.getElementById('inches-result').style.borderColor = "blueviolet";
+   if (resultUnitButtonState == 'cm' || resultUnitButtonState == null){
+    document.getElementById('inch-result').style.backgroundColor = 'transparent';
+    document.getElementById('inch-result').style.borderColor = "transparent";
    } else {
-    document.getElementById('inches-result').style.backgroundColor = 'transparent';
-    document.getElementById('inches-result').style.borderColor = 'transparent';
+    document.getElementById('inch-result').style.backgroundColor = 'lavender';
+    document.getElementById('inch-result').style.borderColor = 'blueviolet';
    }
 
-   if (resultUnitButtonState == 'cm'){
-    document.getElementById('cms-result').style.backgroundColor = 'lavender';
-    document.getElementById('cms-result').style.borderColor = "blueviolet";
+   if (resultUnitButtonState == 'inch' || resultUnitButtonState == null){
+    document.getElementById('cm-result').style.backgroundColor = 'transparent';
+    document.getElementById('cm-result').style.borderColor = "transparent";
    } else {
-    document.getElementById('cms-result').style.backgroundColor = 'transparent';
-    document.getElementById('cms-result').style.borderColor = 'transparent';
+    document.getElementById('cm-result').style.backgroundColor = 'lavender';
+    document.getElementById('cm-result').style.borderColor = 'blueviolet';
    }
 };
 
+//Event listeners, functions, log which button I clicked
 inchesButtonSoft.addEventListener('click', function(){  
   softUnitButtonState = 'inch'
   rerenderButtons();
@@ -112,9 +115,6 @@ cmsButtonResult.addEventListener('click', function(){
   resultUnitButtonState = 'cm'
   rerenderButtons();
 });
-
-
-//event listener, functions, log which button I clicked
 
 /*
 //Conversion de pulgadas a centimetros 
